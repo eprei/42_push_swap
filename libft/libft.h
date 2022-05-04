@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 15:16:08 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/04/04 16:55:43 by Emiliano         ###   ########.fr       */
+/*   Updated: 2021/11/10 14:56:49 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,37 +17,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <fcntl.h>
-# include <stdarg.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-/**************************  FT_PRINTF  ***************************************/
-int		ft_printf(const char *str, ...);
-int		ft_putstr_printf(char *s);
-int		ft_strlen_printf(const char *s);
-int		ft_switch(char conversion, va_list ap);
-int		ft_putchar(char c);
-int		ft_u_itoa(unsigned int n);
-int		ft_u_intlen(unsigned int c);
-int		ft_intlen(int c);
-int		ft_putstr_itoa(char *str);
-int		ft_putnbr_hex_min(unsigned int n);
-int		ft_putnbr_hex_maj(unsigned int n);
-int		ft_putnbr_pointer(unsigned long n);
-int		ft_str_putnbr_pointer(unsigned long n);
-
-/************************  FT_GET_NEXT_LINE  **********************************/
-char	*get_next_line(int fd);
-size_t	line_len(const char *line);
-void	ft_refill_storage(char **storage, int fd, int ret, char *buf);
-void	ft_copy_next_line_and_offset_storage(char **storage, char **next_line);
-
-/************************  FT_LIBFT_ORIGINAL  *********************************/
 int		ft_atoi(const char *str);
 size_t	ft_strlen(const char *s);
 char	*ft_strrchr(const char *s, int c);

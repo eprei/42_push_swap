@@ -6,7 +6,7 @@
 /*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:44:39 by epresa-c          #+#    #+#             */
-/*   Updated: 2021/11/10 15:42:18 by epresa-c         ###   ########.fr       */
+/*   Updated: 2021/11/15 10:26:38 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if ((size_t)start > ft_strlen(s))
 		return (ft_strdup(""));
-	if (len > strlen(s) - start)
-		size_copy = strlen(s) - start;
+	if (len > ft_strlen(s) - start)
+		size_copy = ft_strlen(s) - start;
 	else
 		size_copy = len;
 	substr = malloc(sizeof(char) * (size_copy + 1));

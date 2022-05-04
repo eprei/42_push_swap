@@ -3,23 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:40:14 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/04/04 15:58:39 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:33:10 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
-size_t	line_len(const char *line)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*substr;
 	size_t	i;
+	size_t	size_copy;
 
+	if (!s)
+		return (NULL);
+	else if ((size_t)start > ft_strlen(s))
+		return (ft_strdup(""));
+	else if (len > ft_strlen(s) - start)
+		size_copy = ft_strlen(s) - start;
+	else
+		size_copy = len;
+	substr = malloc(sizeof(char) * (size_copy + 1));
+	if (substr == NULL)
+		return (NULL);
 	i = 0;
-	while (line[i] != '\n' && line[i] != '\0')
+	while (i < len && i < size_copy)
+	{
+		substr[i] = *(s + start + i);
 		i++;
-	return (i);
+	}
+	substr[i] = '\0';
+	return (substr);
 }
 
 void	ft_refill_storage(char **storage, int fd, int ret, char *buf)

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_outils2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 15:14:38 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/04/04 16:48:51 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/04/11 12:24:06 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_putstr_itoa(char *str)
 {
@@ -27,6 +27,27 @@ int	ft_putstr_itoa(char *str)
 	}
 	free(conversion);
 	return (count);
+}
+
+int	ft_intlen(int c)
+{
+	int			i;
+	long int	x;
+
+	x = c;
+	i = 0;
+	if (x < 0)
+	{
+		x = x * (-1);
+		i++;
+	}
+	while (x > 9)
+	{
+		x = x / 10;
+		i++;
+	}
+	i++;
+	return (i);
 }
 
 int	ft_u_itoa(unsigned int n)

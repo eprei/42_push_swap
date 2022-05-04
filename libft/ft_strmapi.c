@@ -6,7 +6,7 @@
 /*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:45:26 by epresa-c          #+#    #+#             */
-/*   Updated: 2021/11/10 14:57:53 by epresa-c         ###   ########.fr       */
+/*   Updated: 2021/11/15 10:27:06 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-	result = strdup(s);
+	result = ft_strdup(s);
 	if (result == NULL)
 		return (NULL);
 	i = 0;

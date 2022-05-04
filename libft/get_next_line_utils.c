@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 12:01:13 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/04 12:01:22 by epresa-c         ###   ########.fr       */
+/*   Created: 2022/01/28 12:58:52 by epresa-c          #+#    #+#             */
+/*   Updated: 2022/04/11 12:24:38 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "get_next_line.h"
 
-int	main(int argc, char **argv)
+size_t	line_len(const char *line)
 {
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (line[i] != '\n' && line[i] != '\0')
+		i++;
+	return (i);
 }

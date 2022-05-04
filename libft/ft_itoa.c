@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 12:45:18 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/04/04 16:48:36 by Emiliano         ###   ########.fr       */
+/*   Updated: 2021/11/10 14:57:23 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(int c)
+static int	ft_intlen(int c)
 {
 	int			i;
 	long int	x;

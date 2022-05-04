@@ -2,7 +2,7 @@ NAME = push_swap
 
 NAMELIBFT = libft.a
 
-SRCS = push_swap.c node_management.c
+SRCS = push_swap.c node_management.c operations.c
 
 OBJ = $(SRCS:.c=.o)
 
