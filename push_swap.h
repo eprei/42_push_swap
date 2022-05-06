@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:27 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/04 15:00:37 by epresa-c         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:29:00 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,9 @@ void	ft_exit(char *str, int err);
 void	remove_node(t_node *node);
 void	rotate_stack(t_node **tail, t_node **head);
 void	reverse_rotate_stack(t_node **tail, t_node **head);
+void    swap_two_stacks(t_node **tail_a, t_node **tail_b);
+void	push_stack(t_node **tail_a, t_node **tail_b);
+void    rotate_two_stacks(t_node **tail_a, t_node **head_a, t_node **tail_b, t_node **head_b);
+void    reverse_rotate_two_stacks(t_node **tail_a, t_node **head_a, t_node **tail_b, t_node **head_b);
 
 #endif
