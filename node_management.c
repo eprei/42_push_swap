@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   node_management.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:35 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/04 14:14:14 by epresa-c         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:57:33 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_stack(t_node **tail, t_node **head, int value)
+void	start_stack(t_node **tail, t_node **head, int value)
 {
 	t_node	*new_node;
 
@@ -25,6 +25,20 @@ void	init_stack(t_node **tail, t_node **head, int value)
 	*head = new_node;
 	*tail = new_node;
 }
+
+// void	start_stack_simplified(t_var *v) //trabajar!!!
+// {
+// 	t_node	*new_node;
+
+// 	new_node = malloc(sizeof(t_node));
+// 	if (new_node == NULL)
+// 		ft_exit("Error: malloc error during stack initialisation", 3);
+// 	new_node->value = value;
+// 	new_node->next = NULL;
+// 	new_node->prev = NULL;
+// 	*head = new_node;
+// 	*tail = new_node;
+// }
 
 void	insert_beginning_stack(t_node **tail, int value)
 {
@@ -53,34 +67,4 @@ void	insert_end_stack(t_node **head, int value)
 	new_node->prev = *head;
 	(*head)->next = new_node;
 	*head = new_node;
-}
-
-void	deallocate_stack(t_node **tail, t_node **head)
-{
-	t_node	*curr;
-
-	curr = *tail;
-	if (*tail == NULL)
-		return ;
-	while (curr->next != NULL)
-	{
-		curr = curr->next;
-		free(curr->prev);
-	}
-	free(curr);
-	*tail = NULL;
-	*head = NULL;
-}
-
-void	remove_node(t_node *node)
-{
-	if (node->prev != NULL)
-	{
-		node->prev->next = node->next;
-	}
-	if (node->next != NULL)
-	{
-		node->next->prev = node->prev;
-	}
-	free(node);
 }

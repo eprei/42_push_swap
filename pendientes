@@ -1,2 +1,4 @@
 fn_check_args; 
 fn_simplify: reduce los numeros al minuimo posilbe
+
+hacer los 4 casos push_swap. 3 num, 5 num, 100 num, 500 num

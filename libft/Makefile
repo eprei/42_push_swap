@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 13:36:28 by epresa-c          #+#    #+#              #
-#    Updated: 2022/04/11 11:58:32 by epresa-c         ###   ########.fr        #
+#    Updated: 2022/05/07 12:03:09 by Emiliano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,15 +33,15 @@ INDEX = ranlib
 all: $(NAME)
 
 $(NAME):
-	$(CC) -c $(CFLAGS) $(SRCS)
-	ar rc $(NAME) $(OBJ)
-	$(INDEX) $(NAME)
+	@ $(CC) -c $(CFLAGS) $(SRCS)
+	@ ar rc $(NAME) $(OBJ)
+	@ $(INDEX) $(NAME)
 
 clean:
-	/bin/rm -f $(OBJ)
+	@ /bin/rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@ /bin/rm -f $(NAME)
 
 re: fclean all
 
