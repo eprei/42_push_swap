@@ -6,13 +6,13 @@
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:35 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/09 18:00:24 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:50:45 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_exit(char *str, int err)
+void	ft_exit_err(char *str, int err)
 {
 	ft_printf("%s\n", str);
 	exit(err);
@@ -63,6 +63,7 @@ void    deallocate_two_stacks_and_free_mallocs(t_var *v)
         while (v->split[i])
             free(v->split[i++]);
         free(v->split);
+        v->split = NULL;
     }
 	free(v);
     v = NULL;

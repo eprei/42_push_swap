@@ -6,7 +6,7 @@
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:35 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/09 17:57:33 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:50:45 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	start_stack(t_node **tail, t_node **head, int value)
 
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
-		ft_exit("Error: malloc error during stack initialisation", 3);
+		ft_exit_err("Error: malloc error during stack initialisation", 3);
 	new_node->value = value;
 	new_node->next = NULL;
 	new_node->prev = NULL;
@@ -32,7 +32,7 @@ void	start_stack(t_node **tail, t_node **head, int value)
 
 // 	new_node = malloc(sizeof(t_node));
 // 	if (new_node == NULL)
-// 		ft_exit("Error: malloc error during stack initialisation", 3);
+// 		ft_exit_err("Error: malloc error during stack initialisation", 3);
 // 	new_node->value = value;
 // 	new_node->next = NULL;
 // 	new_node->prev = NULL;
@@ -46,7 +46,7 @@ void	insert_beginning_stack(t_node **tail, int value)
 
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
-		ft_exit("Malloc error inserting new module\
+		ft_exit_err("Malloc error inserting new module\
 		 at the beginning of the stack", 4);
 	new_node->value = value;
 	new_node->prev = NULL;
@@ -61,7 +61,7 @@ void	insert_end_stack(t_node **head, int value)
 
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
-		ft_exit("Malloc error inserting new module at the end of the stack", 5);
+		ft_exit_err("Malloc error inserting new module at the end of the stack", 5);
 	new_node->value = value;
 	new_node->next = NULL;
 	new_node->prev = *head;

@@ -1,4 +1,9 @@
 fn_check_args; 
 fn_simplify: reduce los numeros al minuimo posilbe
 
+if v->flag_single_arg == TRUE 
+    checkear que no hay int overflow, antes de hacer el atoi
+
+luego de check args, check if A is sorted, exit
+
 hacer los 4 casos push_swap. 3 num, 5 num, 100 num, 500 num

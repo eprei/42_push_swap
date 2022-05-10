@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radx.c                                             :+:      :+:    :+:   */
+/*   sorting_algoritms.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/09 17:25:44 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:05:21 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,25 @@ void radx(t_var *v)
             j++;
         }
         while (v->b_tail != NULL)
+        {
             pa(v); 
+            write(1, "pa\n", 3);
+        }
         i++;
+    }
+}
+
+void     case_2(t_var *v)
+{
+    int a_order_status;
+    
+    a_order_status = a_is_sorted(v);   
+    if (a_order_status == TRUE)
+        exit(0);
+    else
+    {
+        sa(v);
+        write(1, "sa\n", 3);
+        exit(0);
     }
 }

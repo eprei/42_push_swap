@@ -6,7 +6,7 @@
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/09 18:00:39 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:02:09 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_var	*ft_init_var(t_var *v, int argc)
 {
 	v = malloc(sizeof(t_var));
 	if (v == NULL)
-		ft_exit("Error malloc: variable initialisation error", 2);
+		ft_exit_err("Error malloc: variable initialisation error", 2);
 	v->a_head = NULL;
 	v->a_tail = NULL;
 	v->b_head = NULL;
@@ -31,9 +31,16 @@ t_var	*ft_init_var(t_var *v, int argc)
 	return (v);
 }
 
-void	fn_push_swap(t_var *v)
+void	push_swap(t_var *v)
 {
-    radx(v);
+    if (v->a_len == 2)
+        case_2(v);
+    // if (v->a_len <= 3)
+
+    // if (v->a_len <= 5)
+    
+    else
+        radx(v);
 }
 
 void	fill_stack(t_var *v, int argc, char **argv)
@@ -73,13 +80,9 @@ int	main(int argc, char **argv)
 	v = ft_init_var(v, argc);
     v->split = fill_args(v, argc, argv);
     // check_args(v, argc, argv);
-	fill_stack(v, argc, argv);  
-    print_stack_a(v);
-    printf("\n\tA is order = %d\n", a_is_sorted(v));
-	fn_push_swap(v);
-    ft_printf("\n\tA after radx\n");
-    print_stack_a(v);
-    printf("\n\tA is order = %d\n", a_is_sorted(v));
+	fill_stack(v, argc, argv);
+    simplify_stack(v);
+    push_swap(v);
 	deallocate_two_stacks_and_free_mallocs(v);
     return (0);
 }
