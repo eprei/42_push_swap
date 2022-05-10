@@ -6,7 +6,7 @@
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/10 16:02:09 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:42:24 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,17 @@ t_var	*ft_init_var(t_var *v, int argc)
 
 void	push_swap(t_var *v)
 {
+    int a_order_status;
+    
+    a_order_status = a_is_sorted(v);   
+    if (a_order_status == TRUE)
+        exit(0);
     if (v->a_len == 2)
         case_2(v);
     // if (v->a_len <= 3)
-
     // if (v->a_len <= 5)
-    
     else
-        radx(v);
+        sort_big_stack(v);
 }
 
 void	fill_stack(t_var *v, int argc, char **argv)
@@ -77,9 +80,9 @@ int	main(int argc, char **argv)
 	v = NULL;
 	if (argc < 2)
 		return (0);
+    check_args(v, argc, argv);
 	v = ft_init_var(v, argc);
     v->split = fill_args(v, argc, argv);
-    // check_args(v, argc, argv);
 	fill_stack(v, argc, argv);
     simplify_stack(v);
     push_swap(v);

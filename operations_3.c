@@ -6,7 +6,7 @@
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 13:51:06 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/09 11:02:42 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:11:07 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void    rra(t_var *v)
 	insert_beginning_stack(&v->a_tail, v->a_head->value);
 	v->a_head = v->a_head->prev;
 	remove_node(tmp);
+    write(1, "rra\n", 4);
 }
 
 void    rrb(t_var *v)
@@ -30,6 +31,7 @@ void    rrb(t_var *v)
 	insert_beginning_stack(&v->b_tail, v->b_head->value);
 	v->b_head = v->b_head->prev;
 	remove_node(tmp);
+    write(1, "rrb\n", 4);
 }
 
 void    rrr(t_var *v)
@@ -44,4 +46,5 @@ void    rrr(t_var *v)
 	insert_beginning_stack(&v->b_tail, v->b_head->value);
 	v->b_head = v->b_head->prev;
 	remove_node(tmp);
+    write(1, "rrr\n", 4);
 }

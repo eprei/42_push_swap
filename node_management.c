@@ -6,7 +6,7 @@
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:35 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/10 15:50:45 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:32:36 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,6 @@ void	start_stack(t_node **tail, t_node **head, int value)
 	*head = new_node;
 	*tail = new_node;
 }
-
-// void	start_stack_simplified(t_var *v) //trabajar!!!
-// {
-// 	t_node	*new_node;
-
-// 	new_node = malloc(sizeof(t_node));
-// 	if (new_node == NULL)
-// 		ft_exit_err("Error: malloc error during stack initialisation", 3);
-// 	new_node->value = value;
-// 	new_node->next = NULL;
-// 	new_node->prev = NULL;
-// 	*head = new_node;
-// 	*tail = new_node;
-// }
 
 void	insert_beginning_stack(t_node **tail, int value)
 {

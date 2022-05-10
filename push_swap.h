@@ -6,7 +6,7 @@
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:27 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/10 16:02:25 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:06:50 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <limits.h>
 # include "libft/libft.h"
 # include "libft/ft_printf.h"
 # include "libft/get_next_line.h"
@@ -43,9 +44,12 @@ typedef struct s_var
 /********************* CHECK ARGS AND INIT *************************/
 
 void    check_args(t_var *v, int argc, char **argv);
+int     check_digit(char **argv);
+void    check_duplicate(char **argv);
+int     check_int_overflow(char *argv);
 char	**fill_args(t_var *v, int argc, char **argv);
 void	start_stack(t_node **tail, t_node **head, int value);
-void	start_stack_simplified(t_var *v); //trabajar!!!
+void    fn_check_overflow(int argc, char **argv);
 
 /************ MANAGEMENT OF NODES AND CHAINED LISTS ***************/
 
@@ -76,15 +80,16 @@ void    order_stack_b(t_var *v);
 int     a_is_sorted(t_var *v);
 int     b_is_sorted(t_var *v);
 void     case_2(t_var *v);
-void    radx(t_var *v);
+void    sort_big_stack(t_var *v);
 
 /**************************** AUX *********************************/
 
-void	ft_exit_err(char *str, int err);
-void    deallocate_two_stacks_and_free_mallocs(t_var *v);
-void    print_stack_a(t_var *v);
-void    print_stack_b(t_var *v);
-void    simplify_stack(t_var *v);
-void    order_stack_b(t_var *v);
+void	        ft_exit_err(char *str, int err);
+void            deallocate_two_stacks_and_free_mallocs(t_var *v);
+void            print_stack_a(t_var *v);
+void            print_stack_b(t_var *v);
+void            simplify_stack(t_var *v);
+void            order_stack_b(t_var *v);
+long long int	fn_atoll(char *s);
 
 #endif

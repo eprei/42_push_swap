@@ -6,13 +6,13 @@
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/10 16:05:21 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:34:57 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void radx(t_var *v)
+void sort_big_stack(t_var *v)
 {
     int size = v->a_len;
     int max_num = size - 1;
@@ -29,37 +29,19 @@ void radx(t_var *v)
         {
             int num = v->a_tail->value;
             if (((num >> i)&1) == 1)
-            {
                 ra(v);
-                write(1, "ra\n" , 3);
-            }
             else
-            { 
                 pb(v);
-                write(1, "pb\n", 3);
-            }
             j++;
         }
         while (v->b_tail != NULL)
-        {
             pa(v); 
-            write(1, "pa\n", 3);
-        }
         i++;
     }
 }
 
 void     case_2(t_var *v)
 {
-    int a_order_status;
-    
-    a_order_status = a_is_sorted(v);   
-    if (a_order_status == TRUE)
-        exit(0);
-    else
-    {
         sa(v);
-        write(1, "sa\n", 3);
         exit(0);
-    }
 }

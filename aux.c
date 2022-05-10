@@ -6,7 +6,7 @@
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/10 13:45:54 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:00:21 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ void    simplify_stack(t_var *v)
         while (curr_b != NULL)
         {
             if (curr_a->value == curr_b->value)
+            {
                 curr_a->value = i;
+                break ;
+            }
             curr_b = curr_b->next;
             i++;
         }
