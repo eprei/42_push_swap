@@ -6,7 +6,7 @@
 /*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/10 17:42:24 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:06:06 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,36 +40,27 @@ void	push_swap(t_var *v)
         exit(0);
     if (v->a_len == 2)
         case_2(v);
-    // if (v->a_len <= 3)
-    // if (v->a_len <= 5)
-    else
+    if (v->a_len == 3)
+        case_3(v);
+    if (v->a_len > 3 && v->a_len <= 5)
+        case_5(v);
+    if (v->a_len > 5)
         sort_big_stack(v);
 }
 
-void	fill_stack(t_var *v, int argc, char **argv)
+void	fill_stack(t_var *v)
 {
-	int i;
     int j;
 	
-    i = 1;
     j = 0;
-    if (v->flag_single_arg == TRUE)
+    start_stack(&v->a_tail, &v->a_head, ft_atoi(v->split[j]));
+    v->a_len++;
+    while (v->split[++j])
     {
-        start_stack(&v->a_tail, &v->a_head, ft_atoi(v->split[j]));
+        insert_end_stack(&v->a_head, ft_atoi(v->split[j]));
         v->a_len++;
-        while (v->split[++j])
-        {
-            insert_end_stack(&v->a_head, ft_atoi(v->split[j]));
-            v->a_len++;
-        }
     }
-    else
-    {
-        v->a_len = argc - 1;
-        start_stack(&v->a_tail, &v->a_head, ft_atoi(argv[i]));
-        while (++i < argc)
-            insert_end_stack(&v->a_head, ft_atoi(argv[i]));
-    }
+    check_duplicate(v);
 }
 
 int	main(int argc, char **argv)
@@ -80,10 +71,9 @@ int	main(int argc, char **argv)
 	v = NULL;
 	if (argc < 2)
 		return (0);
-    check_args(v, argc, argv);
 	v = ft_init_var(v, argc);
-    v->split = fill_args(v, argc, argv);
-	fill_stack(v, argc, argv);
+    check_args(v, argc, argv);
+	fill_stack(v);
     simplify_stack(v);
     push_swap(v);
 	deallocate_two_stacks_and_free_mallocs(v);

@@ -1,9 +1,1 @@
-fn_check_args; 
-ver como check int overflow cuando argc = 2, "123 45 87 657 945"
-
-if v->flag_single_arg == TRUE 
-    checkear que no hay int overflow, antes de hacer el atoi
-
-luego de check args, check if A is sorted, exit
-
-hacer los 4 casos push_swap. 3 num, 5 num, 100 num, 500 num
+push_swap -> hacer caso 5

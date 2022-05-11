@@ -1,2 +1,0 @@
-exit 1 = void start_stack(t_node **tail, t_node **head, int value) // node_management.c
-exit 2 = void insert_end_stack(t_node head, int value) // node_management.c
