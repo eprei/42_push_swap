@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   node_management.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:35 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/10 16:32:36 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:04:55 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ void	insert_end_stack(t_node **head, int value)
 
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
-		ft_exit_err("Malloc error inserting new module at the end of the stack", 5);
+		ft_exit_err("Malloc error inserting \
+		new module at the end of the stack", 5);
 	new_node->value = value;
 	new_node->next = NULL;
 	new_node->prev = *head;

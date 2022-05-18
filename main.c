@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/11 14:06:06 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/18 10:57:19 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,59 +23,60 @@ t_var	*ft_init_var(t_var *v, int argc)
 	v->b_tail = NULL;
 	v->a_len = 0;
 	v->b_len = 0;
-    v->split = NULL;
-    if (argc == 2)
-        v->flag_single_arg = TRUE;
-    else
-        v->flag_single_arg = FALSE;
+	v->split = NULL;
+	if (argc == 2)
+		v->flag_single_arg = TRUE;
+	else
+		v->flag_single_arg = FALSE;
 	return (v);
 }
 
 void	push_swap(t_var *v)
 {
-    int a_order_status;
-    
-    a_order_status = a_is_sorted(v);   
-    if (a_order_status == TRUE)
-        exit(0);
-    if (v->a_len == 2)
-        case_2(v);
-    if (v->a_len == 3)
-        case_3(v);
-    if (v->a_len > 3 && v->a_len <= 5)
-        case_5(v);
-    if (v->a_len > 5)
-        sort_big_stack(v);
+	int	a_order_status;
+
+	a_order_status = a_is_sorted(v);
+	if (a_order_status == TRUE)
+		exit(0);
+	if (v->a_len == 2)
+		case_2(v);
+	if (v->a_len == 3)
+		case_3(v);
+	if (v->a_len > 3 && v->a_len <= 5)
+		case_5(v);
+	if (v->a_len > 5)
+		sort_big_stack(v);
 }
 
 void	fill_stack(t_var *v)
 {
-    int j;
-	
-    j = 0;
-    start_stack(&v->a_tail, &v->a_head, ft_atoi(v->split[j]));
-    v->a_len++;
-    while (v->split[++j])
-    {
-        insert_end_stack(&v->a_head, ft_atoi(v->split[j]));
-        v->a_len++;
-    }
-    check_duplicate(v);
+	int	j;
+
+	j = 0;
+	start_stack(&v->a_tail, &v->a_head, ft_atoi(v->split[j]));
+	v->a_len++;
+	while (v->split[++j])
+	{
+		insert_end_stack(&v->a_head, ft_atoi(v->split[j]));
+		v->a_len++;
+	}
+	check_duplicate(v);
 }
 
 int	main(int argc, char **argv)
 {
 	t_var	*v;
-    int i = 0;
+	int		i;
 
+	i = 0;
 	v = NULL;
 	if (argc < 2)
 		return (0);
 	v = ft_init_var(v, argc);
-    check_args(v, argc, argv);
+	check_args(v, argc, argv);
 	fill_stack(v);
-    simplify_stack(v);
-    push_swap(v);
+	simplify_stack(v);
+	push_swap(v);
 	deallocate_two_stacks_and_free_mallocs(v);
-    return (0);
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:35 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/10 15:50:45 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:08:57 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,25 +46,25 @@ void	remove_node(t_node *node)
 		node->next->prev = node->prev;
 	}
 	free(node);
-    node = NULL;
+	node = NULL;
 }
 
-void    deallocate_two_stacks_and_free_mallocs(t_var *v)
+void	deallocate_two_stacks_and_free_mallocs(t_var *v)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (v->a_tail)
-        deallocate_stack(&v->a_tail, &v->a_head);
-    if (v->b_tail)
-        deallocate_stack(&v->b_tail, &v->b_head);
-    if (v->flag_single_arg == TRUE)
-    {
-        while (v->split[i])
-            free(v->split[i++]);
-        free(v->split);
-        v->split = NULL;
-    }
+	i = 0;
+	if (v->a_tail)
+		deallocate_stack(&v->a_tail, &v->a_head);
+	if (v->b_tail)
+		deallocate_stack(&v->b_tail, &v->b_head);
+	if (v->flag_single_arg == TRUE)
+	{
+		while (v->split[i])
+			free(v->split[i++]);
+		free(v->split);
+		v->split = NULL;
+	}
 	free(v);
-    v = NULL;
+	v = NULL;
 }
