@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/18 11:04:13 by epresa-c         ###   ########.fr       */
+/*   Updated: 2022/05/19 14:30:43 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	fn_check_overflow(int argc, char **argv)
 	int	is_overflow;
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
 		is_overflow = check_int_overflow(argv[i]);
