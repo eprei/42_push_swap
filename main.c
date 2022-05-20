@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/18 10:57:19 by epresa-c         ###   ########.fr       */
+/*   Updated: 2022/05/20 10:05:16 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,15 @@ void	push_swap(t_var *v)
 	a_order_status = a_is_sorted(v);
 	if (a_order_status == TRUE)
 		exit(0);
-	if (v->a_len == 2)
+	else if (v->a_len == 2)
 		case_2(v);
-	if (v->a_len == 3)
+	else if (v->a_len == 3)
 		case_3(v);
-	if (v->a_len > 3 && v->a_len <= 5)
+	else if (v->a_len == 4)
+		case_4(v);
+	else if (v->a_len == 5)
 		case_5(v);
-	if (v->a_len > 5)
+	else
 		sort_big_stack(v);
 }
 

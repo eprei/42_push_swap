@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:27 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/18 11:08:28 by epresa-c         ###   ########.fr       */
+/*   Updated: 2022/05/20 10:06:17 by Emiliano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int				a_is_sorted(t_var *v);
 int				b_is_sorted(t_var *v);
 void			case_2(t_var *v);
 void			case_3(t_var *v);
+void            case_3_for_5(t_var *v);
+void            case_4(t_var *v);
 void			case_5(t_var *v);
 void			sort_big_stack(t_var *v);
 
