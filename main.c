@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/20 10:05:16 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/20 10:34:58 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_var	*ft_init_var(t_var *v, int argc)
 	v->a_len = 0;
 	v->b_len = 0;
 	v->split = NULL;
+	v->max_bits = 0;
+	v->i = 0;
 	if (argc == 2)
 		v->flag_single_arg = TRUE;
 	else

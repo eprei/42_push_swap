@@ -4,7 +4,7 @@ NAMELIBFT = libft.a
 
 SRCS = main.c node_management.c exit.c \
 	operations_1.c operations_2.c operations_3.c checker_1.c \
-	checker_2.c sorting_algoritms.c aux.c
+	checker_2.c sort_small_stack.c sort_big_stack.c aux.c
 
 OBJ = $(SRCS:.c=.o)
 

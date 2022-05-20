@@ -1,49 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_algoritms.c                                :+:      :+:    :+:   */
+/*   sort_small_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:16 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/20 10:11:31 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/20 10:36:43 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	sort_big_stack(t_var *v)
-{
-	int	size;
-	int	max_num;
-	int	max_bits;
-	int	i;
-	int	j;
-	int	num;
-
-	size = v->a_len;
-	max_num = size - 1;
-	max_bits = 0;
-	i = 0;
-	while ((max_num >> max_bits) != 0)
-		max_bits++;
-	while (i < max_bits)
-	{
-		j = 0;
-		while (j < size)
-		{
-			num = v->a_tail->value;
-			if (((num >> i) & 1) == 1)
-				ra(v);
-			else
-				pb(v);
-			j++;
-		}
-		while (v->b_tail != NULL)
-			pa(v);
-		i++;
-	}
-}
 
 void	case_2(t_var *v)
 {
@@ -81,12 +48,12 @@ void	case_3(t_var *v)
 
 void	case_4(t_var *v)
 {
-    while(v->a_tail->value != 3)
-        ra(v);
-    pb(v);
-    case_3(v);
-    pa(v);
-    ra(v);    
+	while (v->a_tail->value != 3)
+		ra(v);
+	pb(v);
+	case_3(v);
+	pa(v);
+	ra(v);
 }
 
 void	case_3_for_5(t_var *v)
@@ -116,17 +83,20 @@ void	case_3_for_5(t_var *v)
 		rra(v);
 	}
 }
+
 void	case_5(t_var *v)
 {
-	while (v->a_tail->value == 2 || v->a_tail->value == 3 || v->a_tail->value == 4)
+	while (v->a_tail->value == 2 || v->a_tail->value == 3 \
+	|| v->a_tail->value == 4)
 		ra(v);
 	pb(v);
-	while (v->a_tail->value == 2 || v->a_tail->value == 3 || v->a_tail->value == 4)
+	while (v->a_tail->value == 2 || v->a_tail->value == 3 \
+	|| v->a_tail->value == 4)
 		ra(v);
 	pb(v);
 	case_3_for_5(v);
 	if (v->b_tail->value < v->b_tail->next->value)
-		sb(v);	
+		sb(v);
 	pa(v);
-	pa(v);	
+	pa(v);
 }

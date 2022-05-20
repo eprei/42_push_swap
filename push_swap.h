@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Emiliano <Emiliano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: epresa-c <epresa-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 11:44:27 by epresa-c          #+#    #+#             */
-/*   Updated: 2022/05/20 10:06:17 by Emiliano         ###   ########.fr       */
+/*   Updated: 2022/05/20 10:34:57 by epresa-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_var
 	int		b_len;
 	char	**split;
 	int		flag_single_arg;
+	int		max_bits;
+	int		i;
 }	t_var;
 
 /* *********************** CHECK ARGS AND INIT ****************************** */
@@ -83,8 +85,8 @@ int				a_is_sorted(t_var *v);
 int				b_is_sorted(t_var *v);
 void			case_2(t_var *v);
 void			case_3(t_var *v);
-void            case_3_for_5(t_var *v);
-void            case_4(t_var *v);
+void			case_3_for_5(t_var *v);
+void			case_4(t_var *v);
 void			case_5(t_var *v);
 void			sort_big_stack(t_var *v);
 
